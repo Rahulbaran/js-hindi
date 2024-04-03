@@ -19,8 +19,8 @@
 // Type Conversion is very common in JavaScript. In Type Conversion, type of data is changed from one type to another
 // Number() converts "null" to 0.
 
-const firstNum = 123;
-const secondNum = "454fsadf";
+// const firstNum = 123;
+// const secondNum = "454fsadf";
 
 // console.log(firstNum + secondNum); // firstNum is converted into string and concatenation takes place.
 
@@ -48,13 +48,13 @@ const secondNum = "454fsadf";
 // console.log(34 + BigInt(345));
 // console.log("I am " + undefined);
 
-const convertedNum = Number(secondNum);
+// const convertedNum = Number(secondNum);
 
-if (typeof convertedNum === "number" && !isNaN(convertedNum))
-  console.log(convertedNum);
-else console.log("Wrong response");
+// if (typeof convertedNum === "number" && !isNaN(convertedNum))
+//   console.log(convertedNum);
+// else console.log("Wrong response");
 
-console.log(Number(2));
+// console.log(Number(2));
 
 /*
 Using Number()
@@ -65,3 +65,42 @@ null -> NaN
 "33TE" -> NaN
 true -> 1, false -> 0
 */
+
+// const num = Number("343re");
+// typeof num === "number" && !isNaN(num)
+//   ? console.table([typeof num, true])
+//   : console.log(false);
+
+// console.log(String([3, 4, 3][(4, 1, "434", undefined, true, 0)]));
+// console.log(!isNaN(num));
+
+// console.info(Boolean([34, 4, 3, 4]));
+
+const obj = {
+  fullName: "Rahul Kumar",
+  age: 28,
+  qualification: "B. Tech. with Civil Engineering",
+  address: "Giridih, Jharkhand",
+  "contactNo.": 1234567891,
+  married: false,
+  jobStatus: null,
+};
+
+/*
+ An object can't have a duplicate key. 
+*/
+
+// Function to add the type of data in the object
+function addDataType(obj) {
+  const modifiedObj = {};
+
+  Object.entries(obj).forEach(entry => {
+    const [key, value] = entry;
+    modifiedObj[key] = [value, typeof value];
+  });
+
+  return modifiedObj;
+}
+
+const newObj = addDataType(obj);
+console.table(newObj);
